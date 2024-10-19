@@ -54,7 +54,7 @@ Second file `vercel.json` is pure gold here. Setup your project with configurati
 {
   "functions": {
     "api/*.php": {
-      "runtime": "vercel-php@0.4.0"
+      "runtime": "vercel-php@0.7.3"
     }
   }
 }
@@ -75,18 +75,26 @@ vercel
 
 Are you ready to deploy your first PHP project to Vercel? Click & Go!
 
-<a href="https://vercel.com/new/project?template=https://github.com/juicyfx/vercel-examples/tree/master/php"><img src="https://vercel.com/button"></a>
+<a href="https://vercel.com/new/clone?repository-url=https://github.com/juicyfx/vercel-examples/tree/master/php"><img src="https://vercel.com/button"></a>
 
 ## 🤗 Features
 
 - **Architecture**: PHP development server (🚀 fast enough)
-- **PHP version**: 8.0.0
-- **Extensions**: apcu, bcmath, brotli, bz2, calendar, Core, ctype, curl, date, dom, ds, exif, fileinfo, filter, ftp, gettext, hash, iconv, igbinary, imap, intl, json, libxml, lua, mbstring, mongodb, msgpack, mysqli, mysqlnd, openssl, pcntl, pcre, PDO, pdo_mysql, pdo_pgsql, pdo_sqlite, pgsql, phalcon, Phar, protobuf, psr, readline, redis, Reflection, runkit7, session, SimpleXML, soap, sockets, sodium, SPL, sqlite3, standard, swoole, timecop, tokenizer, uuid, xml, xmlreader, xmlrpc, xmlwriter, xsl, Zend OPcache, zlib
+- **PHP version**: 8.3 (https://example-php-8-3.vercel.app)
+- **Extensions**: apcu, bcmath, brotli, bz2, calendar, Core, ctype, curl, date, dom, ds, exif, fileinfo, filter, ftp, geoip, gettext, hash, iconv, igbinary, imap, intl, json, libxml, lua, mbstring, mongodb, msgpack, mysqli, mysqlnd, openssl, pcntl, pcre, PDO, pdo_mysql, pdo_pgsql, pdo_sqlite, pgsql, phalcon, Phar, protobuf, readline, redis, Reflection, runkit7, session, SimpleXML, soap, sockets, sodium, SPL, sqlite3, standard, swoole, timecop, tokenizer, uuid, xml, xmlreader, xmlrpc, xmlwriter, xsl, Zend OPcache, zlib, zip
 - **Speed**: cold ~250ms / warm ~5ms
 - **Memory**: ~90mb
 - **Frameworks**: Nette, Symfony, Lumen, Slim, Phalcon
 
 > List of all installable extensions is on this page https://blog.remirepo.net/pages/PECL-extensions-RPM-status.
+
+## 💯 Versions
+
+- `vercel-php@0.7.3` - Node autodetect / PHP 8.3.x (https://example-php-8-3.vercel.app)
+- `vercel-php@0.6.2` - Node autodetect / PHP 8.2.x (https://example-php-8-2.vercel.app)
+- `vercel-php@0.5.5` - Node autodetect / PHP 8.1.x (https://example-php-8-1.vercel.app)
+- `vercel-php@0.4.4` - Node autodetect / PHP 8.0.x (https://example-php-8-0.vercel.app)
+- `vercel-php@0.3.6` - Node autodetect / PHP 7.4.x (https://example-php-7-4.vercel.app)
 
 ## ⚙️  Usage
 
@@ -99,7 +107,7 @@ If you need to route everything to index, use `routes` property.
 {
   "functions": {
     "api/*.php": {
-      "runtime": "vercel-php@0.4.0"
+      "runtime": "vercel-php@0.7.3"
     }
   },
   "routes": [
@@ -154,27 +162,7 @@ Browse [more examples](https://github.com/juicyfx/vercel-examples). 👀
 
 ## 🚧 Roadmap
 
-**Next**
-
-
-**Done**
-
-- next-gen PHP runtime
-- Composer
-  - config.composer: true
-  - composer.json detection
-- zero config
-- customize php.ini
-- `vercel dev`
-- typescript codebase
-- github workflows (CI)
-- PHP 7.4
-- composer.json scripts
-- PHP 8.0
-
-**Help wanted**
-
-- create examples using vercel-php
+See [roadmap issue](https://github.com/juicyfx/vercel-php/issues/3). Help wanted.
 
 ## ⁉️ FAQ
 
@@ -194,19 +182,19 @@ project
 {
   "functions": {
     "api/*.php": {
-      "runtime": "vercel-php@0.4.0"
+      "runtime": "vercel-php@0.7.3"
     },
 
     // Can be list also directly
 
     "api/index.php": {
-      "runtime": "vercel-php@0.4.0"
+      "runtime": "vercel-php@0.7.3"
     },
     "api/users.php": {
-      "runtime": "vercel-php@0.4.0"
+      "runtime": "vercel-php@0.7.3"
     },
     "api/books.php": {
-      "runtime": "vercel-php@0.4.0"
+      "runtime": "vercel-php@0.7.3"
     }
   }
 }
@@ -221,7 +209,7 @@ project
 {
   "functions": {
     "api/index.php": {
-      "runtime": "vercel-php@0.4.0"
+      "runtime": "vercel-php@0.7.3"
     }
   },
   "routes": [
@@ -241,7 +229,7 @@ Additional function properties are `memory`, `maxDuration`. Learn more about [fu
 {
   "functions": {
     "api/*.php": {
-      "runtime": "vercel-php@0.4.0",
+      "runtime": "vercel-php@0.7.3",
       "memory": 3008,
       "maxDuration": 60
     }
@@ -268,7 +256,7 @@ project
 {
   "functions": {
     "api/*.php": {
-      "runtime": "vercel-php@0.4.0"
+      "runtime": "vercel-php@0.7.3"
     }
   }
 }
@@ -277,7 +265,7 @@ project
 ```json
 {
   "require": {
-    "php": "^7.4",
+    "php": "^8.1",
     "tracy/tracy": "^2.0"
   }
 }
@@ -307,7 +295,7 @@ project
 {
   "functions": {
     "api/*.php": {
-      "runtime": "vercel-php@0.4.0"
+      "runtime": "vercel-php@0.7.3"
     }
   }
 }
@@ -332,7 +320,7 @@ Runtimes support excluding some files or folders, [take a look at doc](https://v
 {
   "functions": {
   "api/**/*.php": {
-    "runtime": "vercel-php@0.4.0",
+    "runtime": "vercel-php@0.7.3",
     "excludeFiles": "{foo/**,bar/config/*.yaml}",
   }
 }

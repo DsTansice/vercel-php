@@ -1,5 +1,79 @@
 # Changelog
 
+### [0.7.3] - 2024-10-19
+
+- Upgrade PHP 8.3 runtime (fixes for curl, opcache)
+
+### [0.7.2] - 2024-09-30
+
+- Upgrade PHP 8.3 runtime
+
+### [0.7.1] - 2024-04-16
+
+- Fix autodetect runtime
+
+### [0.6.2] - 2024-04-16
+
+- Fix autodetect runtime
+
+### [0.5.5] - 2024-04-16
+
+- Fix autodetect runtime
+
+### [0.4.4] - 2024-04-16
+
+- Fix autodetect runtime
+
+### [0.3.6] - 2024-04-16
+
+- Fix autodetect runtime
+
+### [0.7.0] - 2024-02-22
+
+- PHP 8.3
+- Use `@libphp/amazon-linux-2-v83: latest`
+
+### [0.6.1] - 2024-01-24
+
+- Update LD_LIBRARY_PATH
+
+### [0.5.4] - 2024-01-24
+
+- Update LD_LIBRARY_PATH
+
+### [0.4.3] - 2024-01-24
+
+- Update LD_LIBRARY_PATH
+
+### [0.3.5] - 2024-01-24
+
+- Update LD_LIBRARY_PATH
+
+### [0.6.0] - 2023-03-27
+
+- PHP 8.2
+- Use `@libphp/amazon-linux-2-v82: latest`
+
+### [0.5.3] - 2023-03-27
+
+- Bump minimum node version from 14.x to 18.x
+- Upgrade dependencies
+
+### [0.5.2] - 2022-08-10
+
+- Bump minimum node version from 12.x to 14.x
+
+### [0.5.1] - 2022-05-05
+
+- Ignore .vercel folder during deployment
+
+### [0.5.0] - 2022-04-09
+
+- PHP 8.1
+  - Added extensions: geoip, zlib, zip
+  - Removed extensions: psr
+- Use `@libphp/amazon-linux-2-v81: latest`
+
 ### [0.4.0] - 2021-01-02
 
 - PHP 8.0

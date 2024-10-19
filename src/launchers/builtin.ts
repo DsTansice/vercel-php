@@ -9,20 +9,24 @@ import {
   transformToAwsResponse,
   isDev
 } from './helpers';
+import { join as pathJoin } from 'path';
 
 let server: ChildProcess;
 
 async function startServer(entrypoint: string): Promise<ChildProcess> {
   // Resolve document root and router
   const router = entrypoint;
-  const docroot = getUserDir();
+  const docroot = pathJoin(getUserDir(), process.env.VERCEL_PHP_DOCROOT ?? '');
 
   console.log(`🐘 Spawning: PHP Built-In Server at ${docroot} (document root) and ${router} (router)`);
 
   // php spawn options
   const options: SpawnOptions = {
     stdio: ['pipe', 'pipe', 'pipe'],
-    env: process.env
+    env: {
+      ...process.env,
+      LD_LIBRARY_PATH: `/var/task/lib:${process.env.LD_LIBRARY_PATH}`
+    }
   };
 
   // now vs now-dev
@@ -43,7 +47,7 @@ async function startServer(entrypoint: string): Promise<ChildProcess> {
   //
   server = spawn(
     'php',
-    ['-c', 'php.ini', '-S', '127.0.0.1:8000', '-t', docroot, router],
+    ['-c', 'php.ini', '-S', '0.0.0.0:3000', '-t', docroot, router],
     options,
   );
 
@@ -63,7 +67,7 @@ async function startServer(entrypoint: string): Promise<ChildProcess> {
     console.error(`🐘 PHP Built-In Server process errored ${err}`);
   });
 
-  await whenPortOpens(8000, 500);
+  await whenPortOpens(3000, 500);
 
   process.on('exit', () => {
     server.kill();
@@ -79,8 +83,8 @@ async function query({ entrypoint, uri, path, headers, method, body }: PhpInput)
 
   return new Promise(resolve => {
     const options = {
-      hostname: '127.0.0.1',
-      port: 8000,
+      hostname: 'localhost',
+      port: 3000,
       path,
       method,
       headers,
